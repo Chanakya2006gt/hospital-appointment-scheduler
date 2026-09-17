@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareSync - Appointment Booking & Alerts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #090d16; --surface: #101726; --border: #1e293b; --accent: #0ea5e9; --text: #f8fafc; --muted: #94a3b8; --success: #10b981; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; }
+    .header { padding: 1rem 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 2.5rem 2rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+    .btn { background: var(--accent); color: #fff; border: none; padding: 0.65rem 1.25rem; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    .alert-box { background: rgba(14, 165, 233, 0.12); border-left: 3px solid var(--accent); padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <b>CareSync Scheduling Console</b>
+    <a href="index.html" style="color:var(--muted); text-decoration:none; font-size:0.85rem;">← Back to Dashboard</a>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Active Appointment Booking</h2>
+      <p style="color:var(--muted); font-size:0.85rem; margin-bottom:1rem;">Doctor: Dr. Sarah Chen · Department: Cardiology</p>
+      
+      <div style="background:#090d16; border:1px solid var(--border); padding:1.25rem; border-radius:8px; margin-bottom:1.5rem;">
+        <p><b>Confirmed Slot:</b> Tomorrow at 11:00 AM (Room 304, Tower B)</p>
+        <p style="color:var(--success); font-size:0.85rem; font-weight:700; margin-top:0.35rem;">✓ Token #24 Reserved</p>
+      </div>
+
+      <div style="display:flex; gap:1rem;">
+        <button class="btn" onclick="alert('Rescheduled to next available slot: 02:15 PM')">Reschedule Appointment</button>
+        <button class="btn" style="background:#dc2626;" onclick="alert('Appointment cancelled. Doctor slot released to queue.')">Cancel Appointment</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Automated SMS & Email Notifications Queue</h2>
+      <div class="alert-box">
+        <b>SMS Dispatched (+1-***-***-8910):</b> "Your appointment with Dr. Sarah Chen is confirmed for tomorrow 11:00 AM. Please arrive 15 minutes prior for vitals triage."
+      </div>
+      <div class="alert-box" style="border-color:var(--success); background:rgba(16, 185, 129, 0.12);">
+        <b>Email Sent (chanakya@example.com):</b> "Calendar Invite (.ics) & Hospital Parking QR attached."
+      </div>
+    </div>
+  </main>
+</body>
+</html>
